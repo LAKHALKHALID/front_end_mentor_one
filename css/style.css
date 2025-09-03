@@ -3,7 +3,8 @@
   background: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 .light-bg {
-  background: inear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+  /* background: inear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%); */
+  background: hsl(217, 61%, 90%);
 }
 .navbg{
   background: #828198;
@@ -15,10 +16,13 @@
   color: #fff;
 }
 
-.link .nav .nav-link:hover .active {
-  background: none;
-  border-radius: 50px;
+.link .nav .nav-link {
+  cursor: pointer;
 }
 .text-color{
   color: hsl(0deg 2.47% 42.61%);;
+}
+
+.light{
+  color: #fff;
 }

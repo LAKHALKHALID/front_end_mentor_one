@@ -28,16 +28,16 @@ $(document).ready(function(){
   tools.forEach(function(item){
     let card = `
       <div class="col-lg-4 col-md-6 mb-4">
-        <div class="p-4 border rounded-4 h-100">
+        <div class="p-4 border rounded-4 h-100 bg-light parent">
           <div class="d-flex align-items-start">
             <img src="${item.logo}" class="img-fluid" alt="${item.name}">
             <div class="px-3">
-              <h4 class="fw-bold">${item.name}</h4>
+              <h4 class="fw-bold color">${item.name}</h4>
               <p class="text-color">${item.description}</p>
             </div>
           </div>
           <div class="d-flex justify-content-between mt-3">
-            <span class="py-2 px-4 border rounded-pill">Remove</span>
+            <span class="py-2 px-4 border rounded-pill color">Remove</span>
             <div class="form-check form-switch d-flex align-items-center">
               <input class="form-check-input" type="checkbox" ${item.isActive ? 'checked' : ''}>
             </div>
@@ -47,5 +47,34 @@ $(document).ready(function(){
     `;
     $("#extensions-row").append(card);
   });
+
+  let clickCount = 0;
+
+$(".icon").on("click", function () {
+  if ($(this).hasClass("open")) {
+    clickCount++;
+
+    if (clickCount === 1) {
+      $("body").removeClass("light-bg").addClass("dark-bg");
+      $(".parent").removeClass("bg-light").addClass("bg-dark");
+      $(".header").removeClass("bg-light").addClass("navbg");
+      
+    } else if (clickCount === 2) {
+      $("body").removeClass("dark-bg").addClass("light-bg");
+      $(".parent").removeClass("bg-dark").addClass("bg-light")
+      $(".header").removeClass("navbg").addClass("bg-light");
+
+
+      clickCount = 0; // reset if you want to repeat
+    }
+    
+  }
+});
+
+$(".open").on("click", function () {
+  $(".color").toggleClass("light");
+});
+
+
 
 });
