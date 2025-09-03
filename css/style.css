@@ -1,0 +1,24 @@
+
+.dark-bg{
+  background: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+.light-bg {
+  background: inear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+}
+.navbg{
+  background: #828198;
+}
+.active-btn{
+     
+  background: hsl(3, 77%, 44%);
+  border-radius: 50px ;
+  color: #fff;
+}
+
+.link .nav .nav-link:hover .active {
+  background: none;
+  border-radius: 50px;
+}
+.text-color{
+  color: hsl(0deg 2.47% 42.61%);;
+}
